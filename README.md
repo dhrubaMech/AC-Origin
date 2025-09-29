@@ -18,4 +18,4 @@ This code is released for academic and research purposes only.
 Please cite the following paper if you use this code in your work:
 > Modeling the role of ATP metabolism in articular cartilage and osteoarthritis\
 > Dhruba Jyoti Mech and Mohd Suhail Rizvi\
-> [https://doi.org/10.1016/j.biosystems.2025.105597](https://doi.org/10.1101/2025.07.13.664559)
+> [DOI](https://doi.org/10.1101/2025.07.13.664559)
