@@ -32,6 +32,10 @@ pip install numpy matplotlib numba pyvista[all]
 ```
 
 ## Usage
+Make sure you have Python and dependent libraries installed. Then run the scripts as
+```bash
+python main.py
+```
 
 ## License
 This code is released for academic and research purposes only.  
