@@ -4,28 +4,29 @@ hc = 1.0 # height of the articular cartilage
 hs = 1.0 # height of synovial cavity
 hb = 2.0 # bone 
 
-rho = 1.0
-eta = 1.0
-etatc = 0.2
-etatb = 0.2
-phic = 0.5
+rho = 1.0	# density of synovial fluid
+eta = 1.0	# viscosity of synovial fluid
+etatc = 0.2	# effective viscosity of synovial fluid insdie the articular cartilage
+etatb = 0.2	# effective viscosity of synovial fluid insdie the bone
+phic = 0.5 
 phib = 0.1
 
+## permeabilities
 k = 1.0
 k0 = 2.0
 k1 = 0.1
-
 kb = 1.0
 
-alp = 0.01
+bet = 0.01		# rate of degradation
+alp = 0.01		# rate of deposition
 eps = 1.0
 D = 0.01
-bet = 0.01
 nois = 0.25
 
-T = 40.0
-dt = 0.001
-Tp = 1.0 # time period
+Tp = 1.0			     # time period of one gait cycle
+T = 40.0*Tp				 # total simulation time
+dt = 0.001				 # step size
+interval = 10000		 # data saving interval
 
 u0 = 1.0
 
