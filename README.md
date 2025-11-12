@@ -38,6 +38,7 @@ python main.py
 ```
 Use params.py file to change any simulation parameters.
 The description of the key variables necesary for the simulation are provided in parameters file.
+The expression for main equations modeled/discretized in this study are available in the manuscript.
 
 ## License
 This code is released for academic and research purposes only.  
