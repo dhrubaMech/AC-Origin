@@ -37,6 +37,7 @@ Make sure you have Python and dependent libraries installed. Then run the script
 python main.py
 ```
 Use params.py file to change any simulation parameters.
+The description of the key variables necesary for the simulation are provided in parameters file.
 
 ## License
 This code is released for academic and research purposes only.  
