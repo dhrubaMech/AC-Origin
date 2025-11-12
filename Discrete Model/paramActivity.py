@@ -4,29 +4,29 @@ hc = 1.0 # height of the articular cartilage
 hs = 1.0 # height of synovial cavity
 hb = 2.0 # bone 
 
-rho = 1.0
-eta = 1.0
-etatc = 0.2
-etatb = 0.2
-phic = 0.5
+rho = 1.0	# density of synovial fluid
+eta = 1.0	# viscosity of synovial fluid
+etatc = 0.2	# effective viscosity of synovial fluid insdie the articular cartilage
+etatb = 0.2	# effective viscosity of synovial fluid insdie the bone
+phic = 0.5 
 phib = 0.1
 
+## permeabilities
 k = 2.0
 k0 = 1.0
 k1 = 0.1
-
 kb = 1.0
 
-alp = 0.01
+bet = 0.01		# rate of degradation
+alp = 0.01		# rate of deposition
 eps = 1.0
 D = 0.01
-bet = 0.01
 nois = 0.25
 
-Tp = 1.0 # time period
-T = 300.0*Tp
-dt = 0.001
-interval = 10000
+Tp = 1.0			     # time period of one gait cycle
+T = 300.0*Tp			 # total simulation time
+dt = 0.001				 # step size
+interval = 10000		 # data saving interval
 t = np.linspace(0,T,int(T/dt)+1)
 
 nu = eta/rho
@@ -48,12 +48,12 @@ Y,Th = np.meshgrid(yc,ths)
 
 " flow params "
 overlap = 0.2
-us0 = 2.0
-un0 = 0.1
+us0 = 2.0		## amplitude of extension/flexion of joint
+un0 = 0.1		## amplitude of normal loading of joint
 
-" fiber network params "
-Wsup,Lsup,Hsup = hc,hc/3,hc
-meanLc 	= Hsup/30
+" discrete fiber network params "
+Wsup,Lsup,Hsup = hc,hc/3,hc		   ## domain size
+meanLc 	= Hsup/30				   ## size of the individual fibers
 stdLc	= np.round(meanLc*0.2,4)
 #discLen = 0.01 #np.round(fdia/0.9,4)
 discLen = meanLc
@@ -67,11 +67,11 @@ curv    = 0.001
 th0		= 0 ; thstd = 5
 thetaDist = np.random.normal(th0,thstd*(np.pi/180),1000)
 
-alpha = 5 ; alpstd = alpha*0.2 ; alpdist = np.random.normal(alpha,alpstd,100)			## rate fo fiber deposition
+alpha = 5 ; alpstd = alpha*0.2 ; alpdist = np.random.normal(alpha,alpstd,100)			## rate fo fiber deposition in discrete fiber
 #tau_beta = np.round(dt*0.9,8)
-tau_beta = 0.9998
+tau_beta = 0.9998 					## fiber degradation threshold 
 
-Nsample = 10
+Nsample = 10		## number of simulations
 
 
 

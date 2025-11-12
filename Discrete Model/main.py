@@ -12,10 +12,10 @@ from moduleACgeneration import genCollagenCM
 def simulate():
 	#from param import ubx, ucx, usx
 	
-	Tps = [0.05,0.95,0.5,0.05,0.95]
-	Tpn = [0.05,0.05,0.5,0.95,0.95]
+	Tps = [0.05,0.95,0.5,0.05,0.95]		## Extension/Flexion time period for different activities
+	Tpn = [0.05,0.05,0.5,0.95,0.95]     ## Normal loading time period for different activities
 	
-	for stype in range(5):
+	for stype in range(len(stype)):
 		for sm in range(Nsample):
 			path = f"Data/Activities/sample{sm}/"
 			if not os.path.isdir(path):
@@ -51,7 +51,7 @@ def simulate():
 			viewLive = False
 			if viewLive:
 				fig,ax = plt.subplots(1,4,figsize=(16,4.0))
-			viewLast = True
+			viewLast = False
 			
 			filename = f"Type{stype+1}_AC_alphat{alpha}_taubeta{tau_beta}_us{us0}_un{un0}_Tps{Tpswing}_Tpn{Tpnormal}_Tp{Tp}_dt{dt}"
 			print(filename)
@@ -143,6 +143,7 @@ def simulate():
 						if deltaKappa < 1e-10:
 							break
 				#ti += 1 ; ts += dt
+				exit()
 			
 			print(f"Total fibers {len(xf0)} | total nodes {len(xf0)*discNp} | time elapsed : {np.round((time.time()-begin)/60,3)} mins")
 			
